@@ -1,0 +1,127 @@
+:root {
+    --bg-color: #f8f8f8;
+    --text-color: #1a1a1a;
+    --accent-color: #c4a484;
+}
+
+* {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+*::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+    user-select: none;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    overflow: hidden !important;
+    perspective: 1000px;
+}
+
+#canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--text-color);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 999;
+    transition: transform 0.1s ease;
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: transform 1s cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+.loader-text {
+    font-size: 1rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    animation: pulse 2s infinite;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+    opacity: 0;
+    background: transparent;
+    transition: opacity 1s ease-in;
+    /* 新增：确保main也无溢出 */
+    overflow: hidden;
+}
+
+nav { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+.nav-links { 
+    display: flex; 
+    gap: 24px; 
+}
+.icon-link { 
+    width: 24px; 
+    height: 24px; 
+    color: var(--text-color); 
+}
+
+.hero { 
+    flex-grow: 1; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    transform-style: preserve-3d;
+}
+
+.hero-title {
+    font-size: clamp(3rem, 10vw, 8rem); 
+    font-weight: 800; 
+    color: rgb(255, 251, 0);
+    text-shadow: 0 0px 30px rgba(255,250,0,0.5);
+    transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+    transition: transform 0.15s ease-out;
+    will-change: transform;
+    text-align: center;
+}
+
+footer { 
+    font-size: 0.7rem; 
+    color: #bbb; 
+}
+
+@keyframes pulse { 
+    0%, 100% { opacity: 1; } 
+    50% { opacity: 0.3; } 
+}

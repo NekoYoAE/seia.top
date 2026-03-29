@@ -1,0 +1,15 @@
+[Info]
+Version = 3
+
+[Effect]
+Obj = ..\..\..\..\MME\RayAlphaMapCutoutEdit(Material_2.0)\Material_2.0.fx
+Obj.show = true
+Obj[1] = 1.fx
+Obj[2] = 2.fx
+Obj[3] = 3.fx
+Obj[4] = 4.fx
+Obj[5] = 5.fx
+Obj[6] = 6.fx
+Obj[9] = 9.fx
+Obj[10] = 10.fx
+
